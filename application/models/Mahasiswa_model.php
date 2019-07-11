@@ -1,9 +1,11 @@
 <?php
 
-class Mahasiswa_model extends CI_Model {
-	
-	public function getMahasiswa($id = null) {
-		if($id == null) {
+class Mahasiswa_model extends CI_Model
+{
+
+	public function getMahasiswa($id = null)
+	{
+		if ($id == null) {
 			$result =  $this->db->get('mahasiswa')->result_array();
 		} else {
 			$result = $this->db->get_where('mahasiswa', ['id' => $id])->result_array();
@@ -12,21 +14,27 @@ class Mahasiswa_model extends CI_Model {
 		return $result;
 	}
 
-	public function createMahasiswa($data) {
+	public function createMahasiswa($data)
+	{
 		$this->db->insert('mahasiswa', $data);
-		
+
 		return $this->db->affected_rows();
 	}
 
-	public function updateMahasiswa($data, $id) {
+	public function updateMahasiswa($data, $id)
+	{
 		$this->db->update('mahasiswa', $data, ['id' => $id]);
 
 		return $this->db->affected_rows();
 	}
 
-	public function deleteMahasiswa($id) {
+	public function deleteMahasiswa($id)
+	{
 		$this->db->delete('mahasiswa', ['id' => $id]);
 
 		return $this->db->affected_rows();
 	}
+
+	public function searchMahasiswa($keyword)
+	{ }
 }
