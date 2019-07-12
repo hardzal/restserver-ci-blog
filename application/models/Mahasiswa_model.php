@@ -36,5 +36,9 @@ class Mahasiswa_model extends CI_Model
 	}
 
 	public function searchMahasiswa($keyword)
-	{ }
+	{
+		$this->db->select('*')->from('mahasiswa')->like('nama', $keyword)->or_like('nis', $keyword);
+
+		return $this->db->get()->result_array();
+	}
 }
