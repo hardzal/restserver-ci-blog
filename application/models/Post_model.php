@@ -13,6 +13,16 @@ class Post_model extends CI_Model
 		return $result;
 	}
 
+	public function getPostByCategoryId($id)
+	{
+		return $this->db->get_where('posts', ['category_id' => $id])->result_array();
+	}
+
+	public function getPostByTagId($id)
+	{
+		return;
+	}
+
 	public function createPost($data)
 	{
 		$this->db->insert('posts', $data);

@@ -140,4 +140,74 @@ class Post extends REST_Controller
 			}
 		}
 	}
+
+	public function category_get()
+	{
+		$id = $this->get('id');
+
+		if ($id == null) {
+			$this->response(
+				[
+					'status' => false,
+					'message' => 'Provide an id!'
+				],
+				REST_Controller::HTTP_BAD_REQUEST
+			);
+		} else {
+			$post = $this->post->getPostByCategoryId($id);
+		}
+
+		if ($post) {
+			$this->response(
+				[
+					'status' => true,
+					'data' => $post
+				],
+				REST_Controller::HTTP_OK
+			);
+		} else {
+			$this->response(
+				[
+					'status' => false,
+					'message' => 'Posts data not found.'
+				],
+				REST_Controller::HTTP_NOT_FOUND
+			);
+		}
+	}
+
+	public function tag_get()
+	{
+		$id = $this->get('id');
+
+		if ($id == null) {
+			$this->response(
+				[
+					'status' => false,
+					'message' => 'Provide an id!'
+				],
+				REST_Controller::HTTP_BAD_REQUEST
+			);
+		} else {
+			$post = $this->post->getPostByTagId($id);
+		}
+
+		if ($post) {
+			$this->response(
+				[
+					'status' => true,
+					'data' => $post
+				],
+				REST_Controller::HTTP_OK
+			);
+		} else {
+			$this->response(
+				[
+					'status' => false,
+					'message' => 'Posts data not found.'
+				],
+				REST_Controller::HTTP_NOT_FOUND
+			);
+		}
+	}
 }
