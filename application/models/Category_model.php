@@ -23,7 +23,7 @@ class Category_model extends CI_Model
 
 	public function updateCategory($data, $id)
 	{
-		$this->db->update('categories', $data, ['id' => $id]);
+		$this->db->query('categories', $data, ['id' => $id]);
 
 		return $this->db->affected_rows();
 	}
