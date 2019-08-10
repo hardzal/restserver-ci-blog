@@ -37,7 +37,7 @@ class Post extends REST_Controller
 			$this->response(
 				[
 					'status' => false,
-					'message' => 'Posts data not found.'
+					'message' => 'Post data not found.'
 				],
 				REST_Controller::HTTP_NOT_FOUND
 			);
@@ -101,7 +101,7 @@ class Post extends REST_Controller
 			$this->response(
 				[
 					'status' => false,
-					'message' => 'Failed updated data'
+					'message' => 'Failed updated data.'
 				],
 				REST_Controller::HTTP_BAD_REQUEST
 			);
@@ -125,7 +125,7 @@ class Post extends REST_Controller
 				$this->response(
 					[
 						'status' => true,
-						'message' => 'Successfully created data'
+						'message' => 'Successfully deleted data'
 					],
 					REST_Controller::HTTP_OK
 				);
@@ -190,6 +190,41 @@ class Post extends REST_Controller
 			);
 		} else {
 			$post = $this->post->getPostByTagId($id);
+		}
+
+		if ($post) {
+			$this->response(
+				[
+					'status' => true,
+					'data' => $post
+				],
+				REST_Controller::HTTP_OK
+			);
+		} else {
+			$this->response(
+				[
+					'status' => false,
+					'message' => 'Posts data not found.'
+				],
+				REST_Controller::HTTP_NOT_FOUND
+			);
+		}
+	}
+
+	public function user_get()
+	{
+		$id = $this->get('id');
+
+		if ($id == null) {
+			$this->response(
+				[
+					'status' => false,
+					'message' => 'Provide an id!'
+				],
+				REST_Controller::HTTP_BAD_REQUEST
+			);
+		} else {
+			$post = $this->post->getPostByUserId($id);
 		}
 
 		if ($post) {
