@@ -11,6 +11,7 @@ class Tag extends REST_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		$this->methods['index_get']['limit'] = 5;
 		$this->load->model('Tag_model', 'tag');
 	}
 

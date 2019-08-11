@@ -7,11 +7,11 @@
 
 > **Users**
 
-- [ ] **GET** /api/user/index
-- [ ] **GET** /api/user/index/id/:id
-- [ ] **POST** /api/user/index
-- [ ] **PUT** /api/user/index
-- [ ] **DELETE** /api/user/index
+- [x] **GET** /api/user/index
+- [x] **GET** /api/user/index/id/:id
+- [x] **POST** /api/user/index
+- [x] **PUT** /api/user/index
+- [x] **DELETE** /api/user/index
 
 > **Posts**
 
@@ -38,3 +38,4 @@
 - [x] **POST** /api/tag/index
 - [x] **PUT** /api/tag/index
 - [x] **DELETE** /api/tag/index
+  

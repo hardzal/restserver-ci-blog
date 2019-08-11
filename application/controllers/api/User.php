@@ -12,6 +12,8 @@ class User extends REST_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		$this->methods['index_get']['limit'] = 2;
+
 		$this->load->model('User_model', 'user');
 	}
 
