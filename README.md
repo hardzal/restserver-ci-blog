@@ -1,10 +1,6 @@
 # RESTFUL API for Blog
 
 > **Authentication**
-
-- [ ] **POST** /api/auth/login 
-- [ ] **POST** /api/auth/signup
-
 > **Users**
 
 - [x] **GET** /api/user/index
