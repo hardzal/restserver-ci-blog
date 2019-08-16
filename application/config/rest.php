@@ -211,8 +211,9 @@ $config['auth_library_function'] = '';
 | Array of usernames and passwords for login, if ldap is configured this is ignored
 | 
 */
-
-$config['rest_valid_logins'] = ['admin' => '123456'];
+// print_r(getLogin());
+// die;
+$config['rest_valid_logins'] = getLogin();
 
 /*
 |--------------------------------------------------------------------------

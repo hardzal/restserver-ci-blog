@@ -2069,7 +2069,7 @@ abstract class REST_Controller extends CI_Controller {
      * Prepares for digest authentication
      *
      * @access protected
-     * @return void
+     * @return void$
      */
     protected function _prepare_digest_auth()
     {
